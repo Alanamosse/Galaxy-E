@@ -96,8 +96,6 @@ STOC Estimate species population evolution
 
 **What it does**
 
-TODO
-
 Compute and plot evolution of species population, using a glm model.
 
 |
