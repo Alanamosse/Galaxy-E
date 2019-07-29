@@ -105,6 +105,7 @@ Compute and plot evolution of species population, using a glm model.
 **Input description**
 
 A tabular file with species count shaped and filtered with the STOCs 'Preprocess population data' ans 'Filter species' tools. 
+A file of the indicator status of species is given for the STOC species (Column with TRUE or FALSE), including the species name or ID (one used in the species count data). If you are not using the STOC, you need one file of this kind. 
 
 |
 
@@ -118,7 +119,7 @@ Two tabular files are created, they describe global tendencies and yearly variat
 
 **Source**
 
-Publications ? 
-@Romain mail 
+UnPublished script available at http://www.vigienature.fr/sites/vigienature/files/atoms/files/analysestoceps_0.zip
+the first version written by romain.lorrilliere@mnhn.fr
   ]]></help>
 </tool>
