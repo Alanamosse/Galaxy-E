@@ -8,12 +8,18 @@
         Rscript 
          '$__tool_directory__/ExeMainGlmGalaxy.r' 
          '$input'
-         '$__tool_directory__/tabSpecies.csv'
-         'mainglm'
          #if $settings.advanced=='advanced' 
+             #if $settings.condi_spfile.user_sp_file=='default'
+                 '$__tool_directory__/tabSpecies.csv'
+             #else
+                 '$settings.condi_spfile.spfile'
+             #end if
+             'mainglm'
              $settings.sp_code
              $settings.compute_ic
          #else
+             '$__tool_directory__/tabSpecies.csv'
+             'mainglm'
              ''
              'TRUE'
          #end if
@@ -45,6 +51,17 @@
                         </valid>
                     </sanitizer>
                 </param>
+                <conditional name="condi_spfile">
+                    <param name="user_sp_file" type="select" label="Use a custom species details file">
+                        <option value="default" selected="true">No, use the default.</option>
+                        <option value="customfile">Yes, use a custom file.</option>
+                    </param>
+                    <when value="default">
+                    </when>
+                    <when value="customfile">
+                        <param name="spfile" type="data" format="tabular" label="Species details file" help="Tabular file with species indicator status." />
+                    </when>
+                </conditional>
                 <param name="return_plot" type="boolean" truevalue="plot" falsevalue="noplot" checked="yes" help="All the figures will be stocked in a datacollection" label="Return visualizations."/>
                 <expand macro="stoceps_compute_ic"/>
             </when>
