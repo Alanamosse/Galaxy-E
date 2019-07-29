@@ -31,7 +31,7 @@
         <conditional name="settings">
             <expand macro="stoceps_advanced_params_select"/>
             <when value="advanced">
-                <param name="smooth_plot" type="boolean" truevalue="TRUE" falsevalue="FALSE" checked="yes" label="Smooth visualisation."/>
+                <param name="smooth_plot" type="boolean" truevalue="TRUE" falsevalue="FALSE" checked="yes" label="Smooth visualization."/>
                 <param name="method" type="select" help="Available methods are GlmmTMB and Gam" label="Chose the model method">
                     <option selected="true" value="glmmtmb">GlmmTMB</option>
                     <option value="gam">Gam</option>
